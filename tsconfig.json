@@ -1,0 +1,22 @@
+{
+	"compilerOptions": {
+		"target": "es6",
+		"module": "commonjs",
+		"outDir": "./lib",
+		// "rootDir": "./src",
+		"declaration": true,
+		"sourceMap": true,
+		"noImplicitAny": false,
+		"noImplicitThis": false,
+		"moduleResolution": "node",
+		"strict": true,
+		"experimentalDecorators": true,
+		"emitDecoratorMetadata": true,
+		"removeComments": false,
+		"resolveJsonModule": true,
+		"types": ["node"],
+		"typeRoots": [ "node_modules/@types" ]
+	},
+	"include": [ "./package.json", "src/**/*" ],
+	"exclude": [ "test", "lib", "docs" ]
+}
