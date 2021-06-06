@@ -10,7 +10,7 @@
     "build": "rm -rf lib/ && node_modules/.bin/tsc",
     "build:watch": "rm -rf lib/ && node_modules/.bin/tsc --watch",
     "lint": "node_modules/.bin/eslint . --ext .ts",
-    "test": "ENV=dev node -r ts-node/register --max_old_space_size=2048 ./test/application.ts",
+    "test": "ENV=prod node -r ts-node/register --max_old_space_size=2048 ./test/application.ts",
     "preprepareOnly": "npm run lint && npm run build",
     "changelog": "auto-changelog --template keepachangelog --commit-limit false --hide-credit"
   },
@@ -47,5 +47,9 @@
   },
   "peerDependencies": {
     "rewyre": "^2.3.0"
+  },
+  "dependencies": {
+    "@types/ejs": "^3.0.6",
+    "ejs": "^3.1.6"
   }
 }

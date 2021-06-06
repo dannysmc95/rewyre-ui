@@ -5,7 +5,7 @@ import RewyreUI from '../src/index';
 
 	// Create instance of framework.
 	const framework = new Framework({
-		port: 3005,
+		port: 3010,
 		database: true,
 		log_levels: ['info', 'warn', 'error', 'verbose', 'debug'],
 		databases: [

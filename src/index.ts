@@ -2,13 +2,21 @@ import { IPlugin } from 'rewyre';
 import * as packageJson from '../package.json';
 
 // Import all plugin modules.
+import { AdminController } from './controller/admin';
+import { RolesModel } from './model/roles';
+import { UsersModel } from './model/users';
 import { Registry } from './provider/registry';
+import { Renderer } from './provider/renderer';
 
 // Define plugin.
 const plugin: IPlugin = {
 	hooks: [],
 	modules: [
+		AdminController,
+		RolesModel,
+		UsersModel,
 		Registry,
+		Renderer,
 	],
 	config: {
 		collection_prefix: 'ui_',
