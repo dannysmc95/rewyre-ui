@@ -1,1 +1,23 @@
-<p>Sidebar</p>
+<aside class="sidebar-container" id="sidebar">
+
+	<!-- Header -->
+	<section class="sidebar-section header">
+		<p>Rewyre UI - Ho!</p>
+	</section>
+
+	<!-- Navigation -->
+	<section class="sidebar-section navigation">
+		<nav class="navigation-container" id="navigation">
+			<% sidebar.navigation.forEach(item => { %>
+				<a class="nav-item__container" href="<% item.path %> ">
+					<div class="nav-item__icon">
+						<i class="<%= item.icon %>"></i>
+					</div>
+					<div class="nav-item__name">
+						<p class="text"><%= item.name %></p>
+					</div>
+				</a>
+			<% }); %>
+		</nav>
+	</section>
+</aside>

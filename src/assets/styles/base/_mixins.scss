@@ -1,0 +1,83 @@
+/*
+	Colour the elements placeholder
+	Example: @include placeholder{ // Content };
+*/
+@mixin placeholder {
+	&::-webkit-input-placeholder { @content; }
+	&:-moz-placeholder			 { @content; }
+	&::-moz-placeholder			 { @content; }
+	&:-ms-input-placeholder		 { @content; }
+}
+
+/*
+	Create prefixes for example for transitions
+	Example: @include prefix{ transition, all 0.2s ease-in-out };
+*/
+@mixin prefix($property, $value...) {
+	-webkit-#{$property}: $value;
+	-moz-#{$property}: $value;
+	-ms-#{$property}: $value;
+	-o-#{$property}: $value;
+	#{$property}: $value;
+}
+
+/*
+	Clearfix
+	Example @include clearfix();
+*/
+@mixin clearfix {
+	zoom: 1;
+	&:before, &:after {
+		content: '';
+		display: table;
+	}
+	&:after {
+		clear: both;
+	}
+}
+
+/*
+	Media Queries
+	Example: @include media-query(max, 600px) { styles };
+*/
+@mixin media-query($type, $breakpoint: 600px) {
+	@if $type == "min" {
+		@media screen and (min-width: $breakpoint) { @content; }
+	}
+	@else if $type == "max" {
+		@media screen and (max-width: $breakpoint - 1px) { @content; }
+	}
+	@else if $type == "palm" {
+		@media screen and (max-width: $lap-start - 1px) { @content; }
+	}
+	@else if $type == "lap" {
+		@media screen and (min-width: $lap-start) { @content; }
+	}
+	@else if $type == "desk" {
+		@media screen and (min-width: $desk-start) { @content; }
+	}
+	@else if $type == "wide" {
+		@media screen and (min-width: $wide-start) { @content; }
+	}
+}
+
+/*
+	Break the word if the containing div is too small
+	Example: @include word-wrap();
+*/
+@mixin wordwrap {
+	-webkit-hyphens: auto;
+	-moz-hyphens: auto;
+	hyphens: auto;
+	word-break: break-word;
+}
+
+/*
+	Add ellipsis onto end of text if overflows the height of element
+	Example: @include ellipsis();
+*/
+@mixin ellipsis {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}

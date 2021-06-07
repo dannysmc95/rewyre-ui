@@ -1,0 +1,59 @@
+button {
+	background-color: #e3e3e3;
+	border: 1px solid #e3e3e3;
+	padding: 8px 10px;
+	border-radius: 2px;
+	font-size: 14px;
+	color: $primary-text-colour;
+	font-family: $primary-font-family;
+	outline: none;
+	@include prefix(transition, all 0.2s ease-in-out);
+	
+	&:hover {
+		background-color: transparent;
+	}
+
+	&.btn-success {
+		background-color: $alert-success-colour;
+		border: 1px solid $alert-success-colour;
+		color: white;
+
+		&:hover {
+			color: $alert-success-colour;
+			background-color: transparent;
+		}
+	}
+
+	&.btn-warning {
+		background-color: $alert-warning-colour;
+		border: 1px solid $alert-warning-colour;
+		color: white;
+
+		&:hover {
+			color: $alert-warning-colour;
+			background-color: transparent;
+		}
+	}
+
+	&.btn-danger {
+		background-color: $alert-danger-colour;
+		border: 1px solid $alert-danger-colour;
+		color: white;
+
+		&:hover {
+			color: $alert-danger-colour;
+			background-color: transparent;
+		}
+	}
+
+	&.btn-notice {
+		background-color: $alert-notice-colour;
+		border: 1px solid $alert-notice-colour;
+		color: white;
+
+		&:hover {
+			color: $alert-notice-colour;
+			background-color: transparent;
+		}
+	}
+}

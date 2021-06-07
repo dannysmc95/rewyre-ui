@@ -1,4 +1,4 @@
-import { Provide, AbstractProvider } from 'rewyre';
+import { Provide, AbstractProvider, Registry } from 'rewyre';
 import { compile, AsyncTemplateFunction } from 'ejs';
 import { readFile } from 'fs/promises';
 import { resolve } from 'path';
@@ -6,6 +6,7 @@ import { resolve } from 'path';
 @Provide('renderer', 'shared')
 export class Renderer extends AbstractProvider {
 
+	public registry!: Registry;
 	protected viewsDirectory: string;
 	protected wrapper?: AsyncTemplateFunction;
 
@@ -21,14 +22,28 @@ export class Renderer extends AbstractProvider {
 
 	public async render(data: any): Promise<string> {
 
-		// Render the wrapper.
-		const pageData = data;
-		const alertTest = `alert('Hello')`;
-		pageData.scripts = [{type: 'text/javascript', raw: alertTest }];
+		// Define the page data.
+		const pageData = await this.buildPageData(data);
 
 		// Render the page.
 		if (!this.wrapper) return 'Template not ready.';
-		return await this.wrapper(data);
+		return await this.wrapper(pageData);
+	}
+
+	protected async buildPageData(data: any): Promise<any> {
+
+		// Define the base data.
+		const baseData = {
+			meta: [],
+			scripts: [],
+			styles: [],
+			sidebar: {
+				navigation: this.registry.get('UI_SIDEBAR') || [],
+			},
+		};
+
+		// Merge and return data.
+		return Object.assign(baseData, data);
 	}
 
 	protected async prepare(): Promise<void> {
