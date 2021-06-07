@@ -15,7 +15,18 @@ export class Renderer extends AbstractProvider {
 		this.prepare();
 	}
 
+	public async getScripts(): Promise<Array<string>> {
+		return [];
+	}
+
 	public async render(data: any): Promise<string> {
+
+		// Render the wrapper.
+		const pageData = data;
+		const alertTest = `alert('Hello')`;
+		pageData.scripts = [{type: 'text/javascript', raw: alertTest }];
+
+		// Render the page.
 		if (!this.wrapper) return 'Template not ready.';
 		return await this.wrapper(data);
 	}
