@@ -2,22 +2,21 @@
 
 	<!-- Header -->
 	<section class="sidebar-section header">
-		<p>Rewyre UI - Ho!</p>
+		<p class="name"><%= sidebar.name %></p>
 	</section>
 
 	<!-- Navigation -->
-	<section class="sidebar-section navigation">
+	<section class="sidebar-section navigation" ref="navinit" :data-init="<%= JSON.stringify(sidebar.navigation) %>">
 		<nav class="navigation-container" id="navigation">
-			<% sidebar.navigation.forEach(item => { %>
-				<a class="nav-item__container" href="<% item.path %> ">
-					<div class="nav-item__icon">
-						<i class="<%= item.icon %>"></i>
-					</div>
-					<div class="nav-item__name">
-						<p class="text"><%= item.name %></p>
-					</div>
-				</a>
-			<% }); %>
+			<a class="nav-item__container" v-for="item in navigation" :class="{active: isActivePath(item.path)}" :href="item.path">
+				<div class="nav-item__icon">
+					<i :class="item.icon"></i>
+				</div>
+				<div class="nav-item__name">
+					<p class="text" v-text="item.name"></p>
+				</div>
+				<div class="nav-item__indicator"></div>
+			</a>
 		</nav>
 	</section>
 </aside>

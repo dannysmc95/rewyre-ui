@@ -1,0 +1,29 @@
+.body-container {
+	background-color: $tertiary-colour;
+}
+
+.header-container {
+	position: fixed;
+	top: 0;
+	left: $sidebar-width;
+	width: calc(100% - #{$sidebar-width});
+	height: $header-height;
+}
+
+.sidebar-container {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: $sidebar-width;
+	height: 100%;
+	background-color: $primary-colour;
+}
+
+.content-container {
+	position: fixed;
+	top: $header-height;
+	left: $sidebar-width;
+	width: calc(100% - #{$sidebar-width});
+	height: calc(100% - #{$header-height});
+	padding: 25px;
+}

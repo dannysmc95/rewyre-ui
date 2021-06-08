@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap");
 /*
 	Fonts
 */
@@ -90,7 +91,7 @@ ul {
 }
 
 h1, h2, h3, h4, h5, h6, p, a, strong, em, i, b, li, label, input, textarea, button, select, option, blockquote, td, th, caption {
-  font-family: "Oxanium", cursive;
+  font-family: "Nunito", sans-serif;
 }
 
 * {
@@ -166,27 +167,27 @@ img {
 }
 
 input {
-  font-family: "Oxanium", cursive;
+  font-family: "Nunito", sans-serif;
 }
 input::-webkit-input-placeholder {
   color: grey;
-  font-family: "Oxanium", cursive;
+  font-family: "Nunito", sans-serif;
 }
 input:-moz-placeholder {
   color: grey;
-  font-family: "Oxanium", cursive;
+  font-family: "Nunito", sans-serif;
 }
 input::-moz-placeholder {
   color: grey;
-  font-family: "Oxanium", cursive;
+  font-family: "Nunito", sans-serif;
 }
 input:-ms-input-placeholder {
   color: grey;
-  font-family: "Oxanium", cursive;
+  font-family: "Nunito", sans-serif;
 }
 
 button, input, optgroup, select, textarea {
-  font-family: "Oxanium", cursive;
+  font-family: "Nunito", sans-serif;
   font-size: 100%;
   line-height: 1.15;
   margin: 0;
@@ -33498,23 +33499,23 @@ template {
 }
 
 .color-primary {
-  color: #211A1D !important;
+  color: #35495E !important;
 }
 
 .color-secondary {
-  color: #648381 !important;
+  color: #F3BB45 !important;
 }
 
 .color-tertiary {
-  color: #FB8B24 !important;
+  color: #F4F3EF !important;
 }
 
 .color-quaternary {
-  color: #CEA0AE !important;
+  color: #DDDDDD !important;
 }
 
 .color-quinary {
-  color: #D2F1E4 !important;
+  color: #FFFFFF !important;
 }
 
 .color-alert-success {
@@ -33539,8 +33540,8 @@ button {
   padding: 8px 10px;
   border-radius: 2px;
   font-size: 14px;
-  color: #303030;
-  font-family: "Oxanium", cursive;
+  color: #252422;
+  font-family: "Nunito", sans-serif;
   outline: none;
   -webkit-transition: all 0.2s ease-in-out;
   -moz-transition: all 0.2s ease-in-out;
@@ -33598,4 +33599,124 @@ button.btn-notice:hover {
 .fade-enter,
 .fade-leave-active {
   opacity: 0;
+}
+
+.body-container {
+  background-color: #F4F3EF;
+}
+
+.header-container {
+  position: fixed;
+  top: 0;
+  left: 260px;
+  width: calc(100% - 260px);
+  height: 75px;
+}
+
+.sidebar-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 260px;
+  height: 100%;
+  background-color: #35495E;
+}
+
+.content-container {
+  position: fixed;
+  top: 75px;
+  left: 260px;
+  width: calc(100% - 260px);
+  height: calc(100% - 75px);
+  padding: 25px;
+}
+
+.sidebar-container {
+  zoom: 1;
+  padding: 0 25px;
+}
+.sidebar-container:before, .sidebar-container:after {
+  content: "";
+  display: table;
+}
+.sidebar-container:after {
+  clear: both;
+}
+.sidebar-container .sidebar-section {
+  float: left;
+  width: 100%;
+}
+.sidebar-container .sidebar-section.header {
+  height: 75px;
+  border-bottom: 1px solid rgba(221, 221, 221, 0.4);
+}
+.sidebar-container .sidebar-section.header .name {
+  text-align: center;
+  color: white;
+  font-weight: normal;
+  font-size: 32px;
+  padding: 20px 5px;
+}
+.sidebar-container .sidebar-section.navigation {
+  padding-top: 20px;
+}
+.sidebar-container .sidebar-section.navigation .navigation-container {
+  float: left;
+  width: 100%;
+}
+.sidebar-container .sidebar-section.navigation .navigation-container .nav-item__container {
+  float: left;
+  width: 100%;
+  padding: 20px 0;
+  cursor: pointer;
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+.sidebar-container .sidebar-section.navigation .navigation-container .nav-item__container .nav-item__icon {
+  float: left;
+  width: auto;
+  min-width: 35px;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 24px;
+  position: relative;
+  top: -5px;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+.sidebar-container .sidebar-section.navigation .navigation-container .nav-item__container .nav-item__name {
+  float: left;
+  width: auto;
+  text-transform: uppercase;
+  font-family: "Nunito", sans-serif;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.6);
+  padding-left: 15px;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+.sidebar-container .sidebar-section.navigation .navigation-container .nav-item__container .nav-item__indicator {
+  display: none;
+  border-right: 17px solid #F4F3EF;
+  border-top: 17px solid transparent;
+  border-bottom: 17px solid transparent;
+  position: absolute;
+  right: -25px;
+  top: 10px;
+  transition: all 0.5s cubic-bezier(0.29, 1.42, 0.79, 1);
+}
+.sidebar-container .sidebar-section.navigation .navigation-container .nav-item__container:hover .nav-item__text, .sidebar-container .sidebar-section.navigation .navigation-container .nav-item__container:hover .nav-item__icon, .sidebar-container .sidebar-section.navigation .navigation-container .nav-item__container.active .nav-item__text, .sidebar-container .sidebar-section.navigation .navigation-container .nav-item__container.active .nav-item__icon {
+  color: #FFFFFF;
+}
+.sidebar-container .sidebar-section.navigation .navigation-container .nav-item__container.active .nav-item__indicator {
+  display: inline-block;
 }

@@ -9,8 +9,10 @@
   "scripts": {
     "build": "rm -rf lib/ && node_modules/.bin/tsc; cp -r src/view lib/src; cp -r src/assets lib/src",
     "build:watch": "rm -rf lib/ && node_modules/.bin/tsc --watch",
+    "styles:watch": "node_modules/.bin/sass --watch ./src/assets/styles/index.scss:./src/assets/styles/index.css",
     "lint": "node_modules/.bin/eslint . --ext .ts",
-    "dev": "ENV=prod nodemon --watch src --ext ts,ejs,scss --exec node -r ts-node/register --max_old_space_size=2048 ./test/application.ts",
+    "dev": "ENV=prod nodemon --watch src --ext ts,ejs --exec node -r ts-node/register --max_old_space_size=2048 ./test/application.ts",
+    "dev:watch": "ENV=prod nodemon --watch src --ext ts,ejs,js,scss --exec node -r ts-node/register --max_old_space_size=2048 ./test/application.ts",
     "test": "ENV=prod node -r ts-node/register --max_old_space_size=2048 ./test/application.ts",
     "preprepareOnly": "npm run lint && npm run build",
     "changelog": "auto-changelog --template keepachangelog --commit-limit false --hide-credit"

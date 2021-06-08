@@ -6,13 +6,14 @@ import { Framework } from 'rewyre';
  * @param _ Ignore.
  * @param framework The framework instance.
  */
-export function SidebarHook(_: unknown, framework: Framework): void {
+export function SidebarHook(state: string, framework: Framework): void {
+	if (state !== 'pre_init') return;
 
 	// Define the sidebar.
 	const sidebar: Array<any> = [
 		{ icon: 'fas fa-tachometer-alt', name: 'Dashboard', path: '/admin' },
 		{ icon: 'fas fa-users', name: 'User Manager ', path: '/admin/users' },
-		{ icon: 'fas fa-plug', name: 'Plugins ', path: '/admin/users' },
+		{ icon: 'fas fa-plug', name: 'Plugins ', path: '/admin/plugins' },
 		{ icon: 'fas fa-sliders-h', name: 'Settings', path: '/admin/settings' },
 	];
 

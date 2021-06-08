@@ -39,6 +39,7 @@ export class Renderer extends AbstractProvider {
 			styles: [],
 			sidebar: {
 				navigation: this.registry.get('UI_SIDEBAR') || [],
+				name: this.registry.get('UI_NAME') || 'Rewyre UI',
 			},
 		};
 
