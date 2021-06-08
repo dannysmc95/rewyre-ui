@@ -7,9 +7,9 @@ export class AdminController extends AbstractController {
 
 	public renderer!: Renderer;
 
-	@Route('GET', '/')
-	public async index(context: IContext): Promise<IReturn> {
-		const outputHtml = await this.renderer.render({});
-		return { status: 200, content: outputHtml };
-	}
+	// @Route('GET', '/')
+	// public async index(context: IContext): Promise<IReturn> {
+	// 	const outputHtml = await this.renderer.render({});
+	// 	return { status: 200, content: outputHtml };
+	// }
 }

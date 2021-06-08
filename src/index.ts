@@ -3,17 +3,18 @@ import * as packageJson from '../package.json';
 
 // Import all plugin modules.
 import { AdminController } from './controller/admin';
-import { AssetsHook } from './hook/assets';
+import { BuildHook } from './hook/build';
 import { SidebarHook } from './hook/sidebar';
 import { RolesModel } from './model/roles';
 import { UsersModel } from './model/users';
 import { Renderer } from './provider/renderer';
+import { ViewRegistry } from './module/view-registry';
 
 // Define plugin.
 const plugin: IPlugin = {
 	hooks: [
 		{ type: 'init', func: SidebarHook },
-		{ type: 'init', func: AssetsHook },
+		{ type: 'start', func: BuildHook },
 	],
 	modules: [
 		AdminController,
@@ -41,6 +42,7 @@ export {
 	RolesModel,
 	UsersModel,
 	Renderer,
+	ViewRegistry,
 };
 
 // Export default for plugin.

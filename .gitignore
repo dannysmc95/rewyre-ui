@@ -27,3 +27,4 @@ yarn.lock
 .circleci/
 state.json
 src/assets/styles/*.css
+public/dist

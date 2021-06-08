@@ -1,5 +1,6 @@
 import { Drivers, Framework } from 'rewyre';
-import RewyreUI from '../src/index';
+import RewyreUI, { ViewRegistry } from '../src/index';
+import { resolve } from 'path';
 
 (async () => {
 
@@ -18,6 +19,13 @@ import RewyreUI from '../src/index';
 				default: true,
 			},
 		],
+	});
+
+	// Set the registry items.
+	ViewRegistry.add('/about', {
+		component: resolve(__dirname, './view/About.vue'),
+		meta: { title: 'About | Rewyre UI' },
+		name: 'About',
 	});
 
 	// Install and use the plugin.
