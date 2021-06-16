@@ -10,7 +10,6 @@ window.vm.sidebar = Vue.createApp({
 	},
 	mounted() {
 		const container = this.$refs.navinit;
-		const data = container.getAttribute('data-init');
-		console.log(data);
+		this.navigation = JSON.parse(container.getAttribute('data-init'));
 	},
 }).mount('#sidebar');

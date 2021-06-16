@@ -12,4 +12,10 @@ export class AdminController extends AbstractController {
 		const outputHtml = await this.renderer.render({});
 		return { status: 200, content: outputHtml };
 	}
+
+	@Route('GET', '/about')
+	public async about(context: IContext): Promise<IReturn> {
+		const outputHtml = await this.renderer.render({});
+		return { status: 200, content: outputHtml };
+	}
 }

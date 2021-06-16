@@ -6,7 +6,7 @@
 	</section>
 
 	<!-- Navigation -->
-	<section class="sidebar-section navigation" ref="navinit" :data-init="<%= JSON.stringify(sidebar.navigation) %>">
+	<section class="sidebar-section navigation" ref="navinit" data-init="<%= JSON.stringify(sidebar.navigation) %>">
 		<nav class="navigation-container" id="navigation">
 			<a class="nav-item__container" v-for="item in navigation" :class="{active: isActivePath(item.path)}" :href="item.path">
 				<div class="nav-item__icon">
